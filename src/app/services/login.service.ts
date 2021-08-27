@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +13,11 @@ export class LoginService {
 
   constructor(private http:HttpClient) { }
 
+  public loginStatusSubject = new Subject<boolean>();
+
   //getCurrentUser: getting user details of currently logged in user
   public getCurrentUser(){
-    return this.http.get(this.baseUrl+'current-use');
+    return this.http.get(this.baseUrl+'current-user');
   }
 
   //generating token

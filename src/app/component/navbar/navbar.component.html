@@ -1,15 +1,23 @@
 <mat-toolbar color="primary">
-    <a mat-icon-button class="example-icon" routerLink="/" aria-label="Example icon-button with menu icon">
+    <a  mat-icon-button class="example-icon" routerLink="/" aria-label="Example icon-button with menu icon">
       <mat-icon>airplane_ticket</mat-icon>
     </a>
     <span>Flight Booking</span>
     <span class="example-spacer"></span>
-    <a mat-icon-button routerLink="/login" class="example-icon favorite-icon mr20 ml20" aria-label="Example icon-button with heart icon">
+    <a *ngIf="!isLoggedIn" mat-icon-button routerLink="/login" class="example-icon favorite-icon mr20 ml20" aria-label="Example icon-button with heart icon">
       Login
         <mat-icon>login</mat-icon>
     </a>
-    <a mat-icon-button class="example-icon" routerLink="/signup" style="margin-right: 50px; margin-left: 40px;" mr20 aria-label="Example icon-button with share icon">
+    <a *ngIf="!isLoggedIn" mat-icon-button class="example-icon" routerLink="/signup" style="margin-right: 50px; margin-left: 40px;" mr20 aria-label="Example icon-button with share icon">
         Register
         <mat-icon>how_to_reg</mat-icon>
+    </a>
+    <a  *ngIf="isLoggedIn" mat-icon-button class="example-icon"  style="margin-right: 50px; margin-left: 40px;" mr20 aria-label="Example icon-button with share icon">
+      {{ login.getUser().username }}
+  </a>
+
+    <a (click)="logout()" *ngIf="isLoggedIn" mat-icon-button class="example-icon"  style="margin-right: 50px; margin-left: 40px;" mr20 aria-label="Example icon-button with share icon">
+        Logout
+        <mat-icon>logout</mat-icon>
     </a>
   </mat-toolbar>
