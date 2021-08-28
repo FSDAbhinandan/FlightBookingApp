@@ -19,4 +19,14 @@ url:string="http://localhost:9091/admin/flights";
     saveFlight(flight:any){
         return this.http.post(this.url,flight);
     }
+    //Delete Flight By Id
+    deleteFlight(airlineId:number){
+        return this.http.delete(this.url+"/"+airlineId);
+    }
+
+    //Block Flights
+
+    blockFlights(airlineId:number){
+        return this.http.put(this.url+"/"+airlineId, airlineId);
+    }
 }

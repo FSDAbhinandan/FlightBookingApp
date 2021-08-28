@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FlightList } from 'src/app/models/flightlist';
 import { AdminService } from 'src/app/services/admin.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-adminviewflights',
@@ -9,7 +10,7 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class AdminviewflightsComponent implements OnInit {
 
-  constructor(private adminService:AdminService) { }
+  constructor(private adminService:AdminService, private snack: MatSnackBar) { }
 
   ngOnInit(): void {
 
@@ -30,11 +31,40 @@ export class AdminviewflightsComponent implements OnInit {
   //   ticketCost:''
   // }
 
+  //Fetching All Flights From Database For Admin Component
   getAllFlights(){
     this.adminService.getAllFlight().subscribe(
       (data:any)=>{
         console.log(data);
         this.flights=data;
+      },
+      (error)=>{
+        console.log(error);
+      }
+    )
+  }
+
+  //Deleting Flight By Id 
+  deleteById(airlineId:number){
+    this.adminService.deleteFlight(airlineId).subscribe(
+      (data)=>{
+        console.log(data);
+        this.getAllFlights();
+        this.snack.open("Flight Deleted Successfully", "OK", {
+          duration: 3000,
+          // panelClass: ['green-snackbar', 'login-snackbar'],
+         });
+      }
+    );
+  }
+
+  //Blocking the Flight
+
+  blockFlights(airlineId:number){
+    this.adminService.blockFlights(airlineId).subscribe(
+      (data)=>{
+        console.log(data);
+        this.getAllFlights();
       },
       (error)=>{
         console.log(error);

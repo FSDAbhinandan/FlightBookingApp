@@ -25,12 +25,12 @@
           <td>{{flight.totalSeats}}</td>
           <td>{{flight.ticketCost}}</td>
           <td>
-            <button mat-fab color="warn" >
+            <button mat-fab color="warn"  (click)="deleteById(flight.airlineId)">
                 <mat-icon>delete</mat-icon>
               </button>
           </td>
           <td>
-            <button mat-fab color="warn" >
+            <button (click)="blockFlights(flight.airlineId)" mat-fab color="warn" >
                 <mat-icon>block</mat-icon>
               </button>
           </td>
