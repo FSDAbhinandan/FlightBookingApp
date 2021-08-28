@@ -1,0 +1,46 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+          <th>AirlineId</th>
+          <th>AirLine</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Arrival</th>
+          <th>Departure</th>
+          <th>Total Seats</th>
+          <th>Ticket Cost</th>
+          <th>Delete</th>
+          <th>Block</th>
+          <th>Edit </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let flight of flights | paginate: { itemsPerPage: 6, currentPage: page }">
+          <td>{{flight.airlineId}}</td>
+          <td>{{flight.airlineName}}</td>
+          <td>{{flight.fromLocation}}</td>
+          <td>{{flight.toLocation}}</td>
+          <td>{{flight.departureTime}}</td>
+          <td>{{flight.arrivalTime}}</td>
+          <td>{{flight.totalSeats}}</td>
+          <td>{{flight.ticketCost}}</td>
+          <td>
+            <button mat-fab color="warn" >
+                <mat-icon>delete</mat-icon>
+              </button>
+          </td>
+          <td>
+            <button mat-fab color="warn" >
+                <mat-icon>block</mat-icon>
+              </button>
+          </td>
+          <td>
+            <button mat-fab color="accent" >
+                <mat-icon>edit</mat-icon>
+              </button>
+          </td>
+        </tr>
+
+  </table>
+
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>

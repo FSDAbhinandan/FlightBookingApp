@@ -10,23 +10,23 @@ import { AppRoutingModule } from './app-routing.module';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { authInterCeptorProvider } from './services/auth.intercepter';
-import { AdmindashboardComponent } from './pages/admin/admindashboard/admindashboard.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+// import { AdmindashboardComponent } from './pages/admin/admindashboard/admindashboard.component';
 import { UserdashboardComponent } from './pages/user/userdashboard/userdashboard.component';
-
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     SignupComponent,
     LoginComponent,
-    AdmindashboardComponent,
-    UserdashboardComponent
+    // AdmindashboardComponent,
+    UserdashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,10 +36,12 @@ import { UserdashboardComponent } from './pages/user/userdashboard/userdashboard
     MatFormFieldModule,
     MatButtonModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     MatToolbarModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    NgxPaginationModule
   ],
   providers: [authInterCeptorProvider],
   bootstrap: [AppComponent]
