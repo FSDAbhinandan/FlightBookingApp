@@ -19,6 +19,8 @@ import { authInterCeptorProvider } from './services/auth.intercepter';
 import {NgxPaginationModule} from 'ngx-pagination';
 // import { AdmindashboardComponent } from './pages/admin/admindashboard/admindashboard.component';
 import { UserdashboardComponent } from './pages/user/userdashboard/userdashboard.component';
+import { SearchComponent } from './pages/search/search.component';
+import { UsermodModule } from './pages/user/modules/usermod/usermod.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +29,7 @@ import { UserdashboardComponent } from './pages/user/userdashboard/userdashboard
     LoginComponent,
     // AdmindashboardComponent,
     UserdashboardComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { UserdashboardComponent } from './pages/user/userdashboard/userdashboard
     MatToolbarModule,
     MatIconModule,
     MatSnackBarModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    UsermodModule
   ],
   providers: [authInterCeptorProvider],
   bootstrap: [AppComponent]

@@ -10,6 +10,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { AdmineditdialogComponent } from './components/admineditdialog/admineditdialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 const routes: Routes = [
   // {path:'admin',children:[
   //   {path:'viewflights',component:AdminviewflightsComponent}
@@ -23,7 +25,8 @@ const routes: Routes = [
     AdminviewflightsComponent,
     AdmindashboardComponent,
     AdminaddflightComponent,
-    AdminmanagecouponComponent
+    AdminmanagecouponComponent,
+    AdmineditdialogComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +36,8 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatDialogModule
   ]
 })
 export class AdminmodModule { }

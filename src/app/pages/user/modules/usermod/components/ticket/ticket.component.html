@@ -1,0 +1,42 @@
+
+ <div id="table" class="container">
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">AirLinr</th>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{loginUser.airlineName}}</td>
+            <td>{{loginUser.fromLocation}}</td>
+            <td>{{loginUser.toLocation}}</td>
+          </tr>
+          <tr class="thead-dark">
+            <th scope="col">Arrival</th>
+            <th scope="col">Departure</th>
+            <th scope="col">PNR</th>
+          </tr>
+          <tr>
+            <td>{{loginUser.arrivalTime}}</td>
+            <td>{{loginUser.departureTime}}</td>
+            <td>123456</td>
+          </tr>
+          <tr class="thead-dark">
+            <th scope="col">Amount To Be Paid</th>
+            <th scope="col">Email</th>
+            <th scope="col">Contact</th>
+          </tr>
+          <tr>
+            <td>{{loginUser.ticketCost*ticketDetails.seats}}</td>
+            <td>{{loginUser.departureTime}}</td>
+            <td>123456</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <button type="button" (click)="download()" class="btn btn-outline-info">Download</button>
+<button type="button" class="btn btn-outline-light">History</button>
+ </div>

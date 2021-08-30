@@ -1,0 +1,33 @@
+<table class="table table-hover">
+  <thead>
+      <tr>
+        <th>AirlineId</th>
+        <th>AirLine</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Arrival</th>
+        <th>Departure</th>
+        <th>Paid Amount</th>
+        <th>Download</th>
+        <th>Cancel</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tickets of ticketHistory">
+        <td>{{tickets.airlineId}}</td>
+        <td>{{tickets.airlineName}}</td>
+         <td>{{tickets.fromLocation}}</td>
+        <td>{{tickets.toLocation}}</td>
+        <td>{{tickets.arrivalTime}}</td>
+        <td>{{tickets.departureTime}}</td>
+        <td>{{tickets.ticketCost*tickets.seats}}</td> 
+        <td>
+          <button type="button" class="btn btn-warning">Download</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-primary btn-sm">Cancel</button>
+        </td>
+      </tr>
+      <!-- {{data.airlineId}} -->
+
+</table>

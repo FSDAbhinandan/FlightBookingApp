@@ -7,6 +7,7 @@ export class FlightList{
        public departureTime:string,
        public arrivalTime:string,
        public totalSeats:number,
-       public ticketCost:number
+       public ticketCost:number,
+       public block:boolean=false
     ){}
 }

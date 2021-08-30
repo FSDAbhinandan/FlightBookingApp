@@ -10,6 +10,7 @@ export class AdminService{
 
 url:string="http://localhost:9091/admin/flights";
 
+
     constructor(private http:HttpClient){}
 
     getAllFlight(){
@@ -19,6 +20,9 @@ url:string="http://localhost:9091/admin/flights";
     saveFlight(flight:any){
         return this.http.post(this.url,flight);
     }
+    editFlight(id:number, flight:any){
+        return this.http.post(this.url+"/"+id+"/edit",flight);
+    }
     //Delete Flight By Id
     deleteFlight(airlineId:number){
         return this.http.delete(this.url+"/"+airlineId);
@@ -27,6 +31,14 @@ url:string="http://localhost:9091/admin/flights";
     //Block Flights
 
     blockFlights(airlineId:number){
-        return this.http.put(this.url+"/"+airlineId, airlineId);
+        return this.http.put(this.url+"/"+airlineId+"/block", airlineId);
     }
+
+    //UnBlock Flight
+
+    unBlockFlights(airlineId:number){
+        return this.http.put(this.url+"/"+airlineId+"/unblock", airlineId);
+    }
+
+
 }

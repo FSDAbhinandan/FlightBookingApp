@@ -1,1 +1,23 @@
-<p>userdashboard works!</p>
+
+  <div class="container">
+    
+    <div class="row">
+      <div style="border: 1px soli;" class="col col-lg-3">
+        <div class="card" style="width: 14rem; height:100%">
+            <img src="../../../../assets/adminlogo.jpg" class="card-img-top" alt="...">
+            <ul class="list-group list-group-flush">
+                <!-- <button [routerLink]="['/','admin','addflight']" mat-flat-button><li class="list-group-item">Add Flight</li></button> -->
+                <button (click)="ticketHistory()" mat-flat-button><li class="list-group-item">View Ticket History</li></button>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+      </div>
+      <div class="col col-lg-9">
+        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem voluptatum distinctio rem in recusandae, ab incidunt praesentium, dolores doloremque sunt consequuntur hic esse aut veritatis, nostrum corrupti amet. At alias eos voluptates omnis velit dolores, est quaerat deserunt eius rerum illo reprehenderit, soluta, dolorem vero veritatis nihil repellat enim cum.</p> -->
+       <router-outlet></router-outlet>
+      </div>   
+    </div>
+  </div>

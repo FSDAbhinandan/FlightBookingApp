@@ -1,0 +1,71 @@
+<form class="row g-3 needs-validation"  [formGroup]="addFlightGroup" (ngSubmit)="editFlight()" novalidate>
+    <div class="col-md-4 position-relative">
+      <label for="validationTooltip01" class="form-label">AirLine Id</label>
+      <input type="text" class="form-control"  formControlName="airlineId" id="validationTooltip01" value=""  placeholder="AirLine" required>
+      <!-- [ngModel]="viewFlightData.airlineName" name="airlineName" -->
+      <div class="valid-tooltip">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4 position-relative">
+      <label for="validationTooltip01" class="form-label">AirLine</label>
+      <input type="text" class="form-control"  formControlName="airlineName" id="validationTooltip01" value=""  placeholder="AirLine" required>
+      <!-- [ngModel]="viewFlightData.airlineName" name="airlineName" -->
+      <div class="valid-tooltip">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4 position-relative">
+      <label for="validationTooltip02" class="form-label">From</label>
+      <input type="text" class="form-control"  formControlName="fromLocation" id="validationTooltip02" value="" placeholder="From" required>
+      <!-- [ngModel]="viewFlightData.fromLocation" name="fromLocation" -->
+      <div class="valid-tooltip">
+        Looks good!
+      </div>
+    </div>
+    
+    
+    <div class="col-md-4 position-relative">
+        <label for="validationTooltip02" class="form-label">To</label>
+        <input type="text" class="form-control"  formControlName="toLocation" id="validationTooltip02" value="" [ngModel]="viewFlightData.toLocation" name="toLocation" placeholder="To" required>
+        <!-- [ngModel]="viewFlightData.toLocation" name="toLocation" -->
+        <div class="valid-tooltip">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4 position-relative">
+        <label for="validationTooltip02" class="form-label">Arrival Time</label>
+        <input type="text" class="form-control" formControlName="arrivalTime" id="validationTooltip02" value="" placeholder="Arrival Time" required>
+        <!--  [ngModel]="viewFlightData.arrivalTime" name="arrivalTime" -->
+        <div class="valid-tooltip">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4 position-relative">
+        <label for="validationTooltip02" class="form-label">Departure Time</label>
+        <input type="text" class="form-control" formControlName="departureTime" id="validationTooltip02" value="" placeholder="Departure Time" required>
+        <!--  [ngModel]="viewFlightData.departureTime" name="departureTime" -->
+        <div class="valid-tooltip">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4 position-relative">
+        <label for="validationTooltip02" class="form-label">Number Of Seats</label>
+        <input type="text" class="form-control"  formControlName="totalSeats" id="validationTooltip02" value="" placeholder="Number Of Seats" required>
+        <!-- [ngModel]="viewFlightData.totalSeats" name="totalSeats" -->
+        <div class="valid-tooltip">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4 position-relative">
+        <label for="validationTooltip02" class="form-label">Fair</label>
+        <input type="text" class="form-control"  formControlName="ticketCost" id="validationTooltip02" value="Otto" required>
+        <!-- [ngModel]="viewFlightData.ticketCost" name="ticketCost" -->
+        <div class="valid-tooltip">
+          Looks good!
+        </div>
+      </div>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>
+  </form>

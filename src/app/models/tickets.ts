@@ -1,0 +1,20 @@
+export class Tickets{
+    constructor(
+        airlineId:number,
+         airlineName:string,
+     arrivalTime:string,
+       block:boolean,
+       bookedTicketId:number,
+         contact:number,
+     departureTime:string,
+         email:string,
+     fromLocation:string,
+     pnr:number,
+         seats:number,
+         ticketCost:number,
+     toLocation:string,
+         totalSeats:number,
+        userId:number,
+     username:string
+    ){}
+}

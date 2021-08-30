@@ -30,12 +30,15 @@
               </button>
           </td>
           <td>
-            <button (click)="blockFlights(flight.airlineId)" mat-fab color="warn" >
+            <button *ngIf="!flight.block" (click)="blockFlights(flight.airlineId)" mat-fab color="warn" >
+                <mat-icon>block</mat-icon>
+              </button>
+            <button *ngIf="!!flight.block" style="background-color: green;" (click)="unBlockFlights(flight.airlineId)" mat-fab color="warn" >
                 <mat-icon>block</mat-icon>
               </button>
           </td>
           <td>
-            <button mat-fab color="accent" >
+            <button (click)="openDialog()" mat-fab color="accent" >
                 <mat-icon>edit</mat-icon>
               </button>
           </td>

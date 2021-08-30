@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FlightList } from 'src/app/models/flightlist';
 import { AdminService } from 'src/app/services/admin.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { AdmineditdialogComponent } from '../admineditdialog/admineditdialog.component';
 
 @Component({
   selector: 'app-adminviewflights',
@@ -10,7 +12,12 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class AdminviewflightsComponent implements OnInit {
 
-  constructor(private adminService:AdminService, private snack: MatSnackBar) { }
+   block:boolean=false;
+
+  constructor(private adminService:AdminService,
+             private snack: MatSnackBar,
+             private dialog:MatDialog
+            ) { }
 
   ngOnInit(): void {
 
@@ -65,6 +72,10 @@ export class AdminviewflightsComponent implements OnInit {
       (data)=>{
         console.log(data);
         this.getAllFlights();
+        this.snack.open("Flight Blocked Successfully", "OK", {
+          duration: 3000,
+          // panelClass: ['green-snackbar', 'login-snackbar'],
+         });
       },
       (error)=>{
         console.log(error);
@@ -72,4 +83,31 @@ export class AdminviewflightsComponent implements OnInit {
     )
   }
 
+  //UnBlocking Flight
+  unBlockFlights(airlineId:number){
+    this.adminService.unBlockFlights(airlineId).subscribe(
+      (data)=>{
+        console.log(data);
+        this.getAllFlights();
+        this.snack.open("Flight has been UnBlocked Successfully", "OK", {
+          duration: 3000,
+          // panelClass: ['green-snackbar', 'login-snackbar'],
+         });
+      },
+      (error)=>{
+        console.log(error);
+      }
+    )
+  }
+
+
+  openDialog() {
+    const dialogRef = this.dialog.open(AdmineditdialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 }
+
+
