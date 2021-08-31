@@ -40,8 +40,17 @@
     <div class="form-group">
       <label for="exampleInputPassword1">seats</label>
       <!-- [ngModel]="ticket.seats" -->
-      <input type="number" formControlName="seats"  name="seats" class="form-control" id="exampleInputPassword1" placeholder="Contact">
+      <input type="number" formControlName="seats"  name="seats" class="form-control" id="exampleInputPassword1" placeholder="Seats">
     </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Add Coupon</label>
+      <select formControlName="selectcoupon" class="form-select form-select-lg mb-3"  aria-label=".form-select-lg example">
+        <option selected>Open this select menu</option>
+        <option value="{{coup.couponName}}" *ngFor="let coup of coupon" >{{coup.couponName}}</option>
+      </select>
+     </div>
+
+    
       
     <button type="button" (click)="onBook()" class="btn btn-outline-info">continue</button>
 </div>
@@ -126,7 +135,7 @@
             <th scope="col">Contact</th>
           </tr>
           <tr>
-            <td>{{loginUser.ticketCost*seats}}</td>
+            <td>{{loginUser.ticketCost*loginUser.seats}}</td>
             <td>{{loginUser.departureTime}}</td>
             <td>123456</td>
           </tr>

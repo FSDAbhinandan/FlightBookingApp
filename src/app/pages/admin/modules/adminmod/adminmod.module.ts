@@ -12,6 +12,10 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { AdmineditdialogComponent } from './components/admineditdialog/admineditdialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import {MatTableModule} from '@angular/material/table';
 const routes: Routes = [
   // {path:'admin',children:[
   //   {path:'viewflights',component:AdminviewflightsComponent}
@@ -37,7 +41,11 @@ const routes: Routes = [
     ReactiveFormsModule,
     MatSnackBarModule,
     NgxPaginationModule,
-    MatDialogModule
+    MatDialogModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule
   ]
 })
 export class AdminmodModule { }

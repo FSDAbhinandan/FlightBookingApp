@@ -3,6 +3,7 @@ import {MatDialog} from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TicketComponent } from '../ticket/ticket.component';
+import { CouponService } from 'src/app/services/couponservice';
 
 @Component({
   selector: 'app-ticketbooking',
@@ -17,8 +18,9 @@ export class TicketbookingComponent implements OnInit {
   downloadableTicket:boolean=false;
   paymentGroup:FormGroup;
   user:any;
+  coupon:any[]=[];
 
-  constructor(private dialog:MatDialog, private router:Router) { 
+  constructor(private dialog:MatDialog, private router:Router, private couponService:CouponService) { 
 
     this.loginUser =JSON.parse(localStorage.getItem("login") || '');
     this.user = JSON.parse(localStorage.getItem('user') || '');
@@ -26,14 +28,15 @@ export class TicketbookingComponent implements OnInit {
     this.paymentGroup=new FormGroup({
       email:new FormControl("",[]),
       contact:new FormControl("",[]),
-      seats:new FormControl("",[])
+      seats:new FormControl("",[]),
+      selectcoupon:new FormControl("",[])
     });
 
     
   }
 
   ngOnInit(): void {
-
+    this.getAllCoupon();
   }
 
   onBook(){
@@ -70,4 +73,17 @@ export class TicketbookingComponent implements OnInit {
     });
   }
 
+
+  //getting All Coupons
+  getAllCoupon(){
+    this.couponService.getAllCoupon().subscribe(
+      (data:any)=>{
+        console.log(data);
+        this.coupon=data;
+      },
+      (error)=>{
+        console.log(error);
+      }
+    );
+  }
 }

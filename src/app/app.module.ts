@@ -17,6 +17,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { authInterCeptorProvider } from './services/auth.intercepter';
 import {NgxPaginationModule} from 'ngx-pagination';
+import {MatStepperModule} from '@angular/material/stepper';
 // import { AdmindashboardComponent } from './pages/admin/admindashboard/admindashboard.component';
 import { UserdashboardComponent } from './pages/user/userdashboard/userdashboard.component';
 import { SearchComponent } from './pages/search/search.component';
@@ -45,7 +46,8 @@ import { UsermodModule } from './pages/user/modules/usermod/usermod.module';
     MatIconModule,
     MatSnackBarModule,
     NgxPaginationModule,
-    UsermodModule
+    UsermodModule,
+    MatStepperModule
   ],
   providers: [authInterCeptorProvider],
   bootstrap: [AppComponent]

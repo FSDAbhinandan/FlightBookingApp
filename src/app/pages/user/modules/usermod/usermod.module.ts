@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import { TicketComponent } from './components/ticket/ticket.component';
 import {MatTableModule} from '@angular/material/table';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -24,7 +25,8 @@ import {MatTableModule} from '@angular/material/table';
     FormsModule,
     MatDialogModule,
     ReactiveFormsModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule
   ]
 })
 export class UsermodModule { }
